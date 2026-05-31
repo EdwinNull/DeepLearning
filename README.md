@@ -70,14 +70,22 @@ pytest tests/ -q
 
 ```
 .
-├── minitorch/      # 我们亲手造的微型深度学习框架（随课程逐步成长）
-│   └── utils/      #   set_seed、gradcheck（数值梯度检查）等通用工具
-├── notebooks/      # 教学 notebook，按 part 分目录，编号即学习顺序
-├── tests/          # 对 minitorch 的 pytest（梯度检查等）
-├── scripts/        # 数据下载等辅助脚本
-├── data/           # 数据缓存（不入库）
-└── exercises/      # 各 Part 练习题
+├── minitorch/          # 我们亲手造的微型深度学习框架
+│   ├── tensor.py       #   张量自动求导引擎（框架心脏）
+│   ├── functional.py   #   softmax / cross_entropy 等函数式算子
+│   ├── scalar.py       #   标量 autograd 引擎 Value（教学踏脚石）
+│   ├── nn/             #   Module/Linear/激活/损失/Dropout/BatchNorm/
+│   │                   #     Conv2d/RNN/LSTM/注意力/Transformer
+│   ├── optim/          #   SGD / RMSProp / Adam
+│   ├── data/           #   Dataset / DataLoader
+│   └── utils/          #   set_seed、gradcheck（数值梯度检查）、load_mnist
+├── notebooks/          # 教学 notebook，按 part 分目录，编号即学习顺序
+├── tests/              # 对 minitorch 的 pytest（每个算子/层都有梯度检查）
+├── scripts/            # 数据下载等辅助脚本
+└── data/               # 数据缓存（不入库）
 ```
+
+> ✅ **项目状态：已完成。** 9 个 Part、26 个 notebook 全部就绪，`minitorch` 框架的每个核心算子/层都通过数值梯度检查（`pytest tests/`，55 项），并与 PyTorch 对照验证。
 
 ## 设计理念
 
