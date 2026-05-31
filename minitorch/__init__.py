@@ -16,6 +16,9 @@
 from minitorch import utils
 from minitorch.tensor import Tensor, no_grad, ones, randn, tensor, zeros
 from minitorch.utils import gradcheck, numerical_gradient, rel_error, set_seed
+from minitorch import functional
+from minitorch import functional as F  # 习惯性简称，类似 torch.nn.functional as F
+from minitorch import nn
 
 __version__ = "0.1.0"
 
@@ -32,5 +35,9 @@ __all__ = [
     "ones",
     "randn",
     "no_grad",
+    # 高层 API
+    "functional",
+    "F",
+    "nn",
     "__version__",
 ]
