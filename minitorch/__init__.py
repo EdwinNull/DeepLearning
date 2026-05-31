@@ -14,6 +14,7 @@
     minitorch.numerical_gradient / rel_error
 """
 from minitorch import utils
+from minitorch.tensor import Tensor, no_grad, ones, randn, tensor, zeros
 from minitorch.utils import gradcheck, numerical_gradient, rel_error, set_seed
 
 __version__ = "0.1.0"
@@ -24,5 +25,12 @@ __all__ = [
     "gradcheck",
     "numerical_gradient",
     "rel_error",
+    # 张量自动求导引擎（框架核心，Part 3 起）
+    "Tensor",
+    "tensor",
+    "zeros",
+    "ones",
+    "randn",
+    "no_grad",
     "__version__",
 ]
