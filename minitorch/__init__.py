@@ -19,6 +19,8 @@ from minitorch.utils import gradcheck, numerical_gradient, rel_error, set_seed
 from minitorch import functional
 from minitorch import functional as F  # 习惯性简称，类似 torch.nn.functional as F
 from minitorch import nn
+from minitorch import optim
+from minitorch import data
 
 __version__ = "0.1.0"
 
@@ -39,5 +41,7 @@ __all__ = [
     "functional",
     "F",
     "nn",
+    "optim",
+    "data",
     "__version__",
 ]
