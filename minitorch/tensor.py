@@ -20,6 +20,11 @@ import numpy as np
 _GRAD_ENABLED = True
 
 
+def is_grad_enabled():
+    """当前是否在构建计算图（no_grad() 下为 False）。供自定义算子查询。"""
+    return _GRAD_ENABLED
+
+
 @contextmanager
 def no_grad():
     """上下文管理器：其内部的运算不记录计算图（类似 ``torch.no_grad()``）。"""
