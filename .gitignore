@@ -15,9 +15,12 @@ venv/
 env/
 ENV/
 
-# 数据缓存（不入库，仅保留占位）
-data/*
-!data/.gitkeep
+# 数据缓存（不入库，仅保留根目录占位）。
+# 注意：notebook 用 nbconvert 执行时，内核工作目录是该 notebook 所在目录，
+# load_mnist(root="data") 会在那里生成 data/，故需忽略 notebooks 下任意 data/。
+/data/*
+!/data/.gitkeep
+notebooks/**/data/
 
 # 编辑器 / 系统
 .vscode/
