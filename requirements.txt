@@ -1,0 +1,14 @@
+# 运行时依赖：运行 notebook 与 minitorch 框架所需
+# 安装： pip install -r requirements.txt
+
+numpy>=1.26,<2.1
+matplotlib>=3.8
+tqdm>=4.66
+jupyterlab>=4.0
+ipykernel
+
+# PyTorch 仅用于「手写实现 vs 官方框架」的对照（不参与 minitorch 核心）。
+# 默认 wheel 体积很大（含 CUDA），本项目只需 CPU 版，强烈建议改用：
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+torch>=2.2,<2.6
+torchvision>=0.17

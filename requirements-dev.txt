@@ -1,0 +1,7 @@
+# 开发/测试依赖： pip install -r requirements-dev.txt
+-r requirements.txt
+
+pytest>=8.0
+nbconvert>=7.0     # 用 jupyter nbconvert --execute 跑通 notebook 做验证
+graphviz           # nb03 计算图可视化（可选；缺失时自动降级为文字版）
+jupytext           # 可选：notebook 与 .py 的版本管理/diff
